@@ -43,6 +43,15 @@ def J(theta,x,y):
     diff = np.array(theta.T*x-y)
     return (diff*diff).sum()/2/m
 
+
+def Jlwr(theta,X,y,x,c):
+    X = np.array(X)
+    x = np.array(x)
+    w = np.exp(-np.dot((X-x.T).T,(X-x.T))/2/c/c)
+
+
+
+
 def standardize(X):
     X = np.array(X)
     n,m = X.shape
