@@ -44,3 +44,7 @@ def getSmo(X,y,C,tol,maxIter,kernel=linearKernel()):
     def select(i,alphas,b):
         #选择alpha
         Ei = E(i,alphas,b)
+
+        #选择违反KKT的作为alpha2
+        Ri = y[i] - Ei
+    
